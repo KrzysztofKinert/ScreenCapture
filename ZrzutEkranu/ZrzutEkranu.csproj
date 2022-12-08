@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="SaveImage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SaveImage.Designer.cs">
+      <DependentUpon>SaveImage.cs</DependentUpon>
     </Compile>
     <Compile Include="SelectArea.cs">
       <SubType>Form</SubType>
@@ -66,9 +66,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +78,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SaveImage.resx">
+      <DependentUpon>SaveImage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectArea.resx">
       <DependentUpon>SelectArea.cs</DependentUpon>
     </EmbeddedResource>
