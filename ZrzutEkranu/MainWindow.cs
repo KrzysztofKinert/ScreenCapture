@@ -5,8 +5,11 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Resources;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,8 +17,7 @@ using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using WK.Libraries.SharpClipboardNS;
 using ZrzutEkranu.Utils;
-using static System.Net.Mime.MediaTypeNames;
-using Image = System.Drawing.Image;
+
 
 namespace ZrzutEkranu
 {
@@ -30,35 +32,89 @@ namespace ZrzutEkranu
             _clipboard.ClipboardChanged += ClipboardChanged;
         }
 
-    
+
         private void ClipboardChanged(object sender, SharpClipboard.ClipboardChangedEventArgs e)
         {
             if (e.ContentType != SharpClipboard.ContentTypes.Image) 
                 return;
 
-
-            if (e.SourceApplication.Title == "Screen Snipping" && Properties.Settings.Default.ClipboardSource_ZrzutEkranu)
+            var localizedScreenSnippingNames = new List<string>() { "Screen Snipping", "" };
+            var a = ContainsSnippingTool(e);
+            if (localizedScreenSnippingNames.Contains(e.SourceApplication.Title) && e.SourceApplication.Title != "Snipping Tool")
             {
-                _capturedImage = _clipboard.ClipboardImage;
-                ScreenCaptureImage.Image = _capturedImage;
+                if (Properties.Settings.Default.ClipboardSource_Other is false)
+                    return;
+            }
+            else switch (e.SourceApplication.Title)
+            {
+                case "Screen Snipping" when Properties.Settings.Default.ClipboardSource_ZrzutEkranu is false:
+                case "Snipping Tool" when Properties.Settings.Default.ClipboardSource_SnippingTool is false:
+                    return;
             }
 
-            if (e.SourceApplication.Title == "Snipping Tool" &&
-                Properties.Settings.Default.ClipboardSource_SnippingTool)
-            {
-                _capturedImage = _clipboard.ClipboardImage;
-                ScreenCaptureImage.Image = _capturedImage;
-            }
+            _capturedImage = _clipboard.ClipboardImage;
+            ScreenCaptureImage.Image = _capturedImage;
 
-            if (Properties.Settings.Default.ClipboardSource_Other)
-            {
-                _capturedImage = _clipboard.ClipboardImage;
-                ScreenCaptureImage.Image = _capturedImage;
-            }
+
+            //if (e.SourceApplication.Title == "Screen Snipping" || e.SourceApplication.Title == "Snipping Tool")
+            //{
+            //    switch (e.SourceApplication.Title)
+            //    {
+            //        case "Screen Snipping" when Properties.Settings.Default.ClipboardSource_ZrzutEkranu:
+            //            _capturedImage = _clipboard.ClipboardImage;
+            //            ScreenCaptureImage.Image = _capturedImage;
+            //            break;
+            //        case "Snipping Tool" when Properties.Settings.Default.ClipboardSource_SnippingTool:
+            //            _capturedImage = _clipboard.ClipboardImage;
+            //            ScreenCaptureImage.Image = _capturedImage;
+            //            break;
+            //    }
+            //}
+            //else if (Properties.Settings.Default.ClipboardSource_Other)
+            //{
+            //    _capturedImage = _clipboard.ClipboardImage;
+            //    ScreenCaptureImage.Image = _capturedImage;
+            //}
+
+
+            //if (e.SourceApplication.Title == "Screen Snipping" && Properties.Settings.Default.ClipboardSource_ZrzutEkranu)
+            //{
+            //    _capturedImage = _clipboard.ClipboardImage;
+            //    ScreenCaptureImage.Image = _capturedImage;
+            //}
+
+            //if (e.SourceApplication.Title == "Snipping Tool" &&
+            //    Properties.Settings.Default.ClipboardSource_SnippingTool)
+            //{
+            //    _capturedImage = _clipboard.ClipboardImage;
+            //    ScreenCaptureImage.Image = _capturedImage;
+            //}
+
+            //if (Properties.Settings.Default.ClipboardSource_Other)
+            //{
+            //    _capturedImage = _clipboard.ClipboardImage;
+            //    ScreenCaptureImage.Image = _capturedImage;
+            //}
+
+            SetImageSizeMode();
         }
 
 
         private void MainWindow_SizeChanged(object sender, EventArgs e)
+        {
+            SetImageSizeMode();
+        }
+
+        private bool ContainsSnippingTool(SharpClipboard.ClipboardChangedEventArgs e)
+        {
+            ResourceManager myRes = new ResourceManager(typeof(string));
+            ResourceSet resSet = myRes.GetResourceSet(CultureInfo.CurrentCulture, true, true);
+
+            var lol = Resources.ScreenSnippingLocalization.
+            var lmao = "a";
+            return true;
+        }
+        private void SetImageSizeMode()
         {
             if (_capturedImage is null)
                 return;
@@ -108,7 +164,7 @@ namespace ZrzutEkranu
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

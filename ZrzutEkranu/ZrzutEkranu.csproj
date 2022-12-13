@@ -66,6 +66,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Resources\ScreenSnippingLocalization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScreenSnippingLocalization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SnippingToolLocalization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SnippingToolLocalization.resx</DependentUpon>
+    </Compile>
     <Compile Include="SettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +103,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\ScreenSnippingLocalization.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ScreenSnippingLocalization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SnippingToolLocalization.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SnippingToolLocalization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingsWindow.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
