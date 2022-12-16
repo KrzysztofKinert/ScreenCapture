@@ -14,42 +14,99 @@ using System.Xml.Linq;
 
 namespace ZrzutEkranu.Utils
 {
+    [Serializable]
+    public enum PdfImageOrientation
+    {
+        Vertical,
+        Horizontal,
+        Auto
+    }
     internal static class SaveFile
     {
-        public static void SaveToImage(Image capturedImage)
+        private const int PdfPageWidth = 595;
+        private const int PdfPageHeight = 842;
+        private const int PdfDpi = 72;
+
+        public static void SaveToImage(Image image)
         {
-            ImageFormat format = Properties.Settings.Default.ImageFormat;
-            string fileName = GetFileName(Properties.Settings.Default.ImageFormat.ToString());
+            var format = Properties.Settings.Default.ImageFormat;
+            var fileName = GetFileName(Properties.Settings.Default.ImageFormat.ToString());
 
             if (fileName != null)
-                capturedImage.Save(fileName, format);
+                image.Save(fileName, format);
         }
 
-        public static void SaveToPDF(Image capturedImage)
+        public static void SaveToPdf(Image capturedImage)
         {
             var document = new PdfDocument();
             var page = document.AddPage();
 
-            using(var gfx = XGraphics.FromPdfPage(page))
-            using(var stream = new MemoryStream())
+            AddImageToPdf(capturedImage, page);
+
+            var fileName = GetFileName("PDF");
+
+            if (fileName != null)
+                document.Save(fileName);
+        }
+
+        private static void AddImageToPdf(Image image, PdfPage page)
+        {
+            var margin = Properties.Settings.Default.PdfMargin;
+
+            using (var gfx = XGraphics.FromPdfPage(page))
+            using (var stream = new MemoryStream())
             {
-                capturedImage.Save(stream, ImageFormat.Bmp);
+                if (ShouldRotateImage(image))
+                    image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+
+                image.Save(stream, ImageFormat.Bmp);
                 stream.Position = 0;
-                using (var image = XImage.FromStream(stream))
+                using (var xImage = XImage.FromStream(stream))
                 {
-                    if (image.Size.Width > 580)
+                    double xOffset;
+                    if (ImageFitsPdf(image))
                     {
-                        var height = 580 / image.Size.Width * image.Size.Height;
-                        gfx.DrawImage(image, 5, 5, 585, height);
+                        xOffset = (PdfPageWidth - xImage.PointWidth - 2 * margin) / 2;
+                        gfx.DrawImage(xImage, margin + xOffset, margin);
                     }
                     else
-                        gfx.DrawImage(image, 5, 5);
+                    {
+                        double scaledWidth;
+                        double scaledHeight;
+                        if (xImage.PointWidth > xImage.PointHeight)
+                        {
+                            scaledWidth = PdfPageWidth - 2 * margin;
+                            scaledHeight = scaledWidth / xImage.Size.Width * xImage.Size.Height;
+                        }
+                        else
+                        {
+                            scaledHeight = PdfPageHeight - 2 * margin;
+                            scaledWidth = scaledHeight / xImage.Size.Height * xImage.Size.Width;
+                        }
 
-                    var fileName = GetFileName("PDF");
-                    if (fileName != null)
-                        document.Save(fileName);
+                        xOffset = (PdfPageWidth - scaledWidth - 2 * margin) / 2;
+                        gfx.DrawImage(xImage, margin + xOffset, margin, scaledWidth, scaledHeight);
+                    }
                 }
             }
+        }
+
+        private static bool ShouldRotateImage(Image image)
+        {
+            var autoRotation = ImageFitsPdf(image) is false 
+                                   && Properties.Settings.Default.PdfImageOrientation == PdfImageOrientation.Auto 
+                                   && image.Width > image.Height;
+
+            return autoRotation || Properties.Settings.Default.PdfImageOrientation == PdfImageOrientation.Vertical;
+        }
+
+        private static bool ImageFitsPdf(Image image)
+        {
+            var maxWidth = PdfPageWidth - 2 * Properties.Settings.Default.PdfMargin;
+            var maxHeight = PdfPageHeight - 2 * Properties.Settings.Default.PdfMargin;
+            var dpiWidth = image.Width * PdfDpi / image.HorizontalResolution;
+            var dpiHeight = image.Height * PdfDpi / image.VerticalResolution;
+            return dpiWidth < maxWidth && dpiHeight < maxHeight;
         }
 
         private static string GetFileName(string format)

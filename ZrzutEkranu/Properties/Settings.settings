@@ -14,5 +14,11 @@
     <Setting Name="ClipboardSource_Other" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="PdfMargin" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="PdfImageOrientation" Type="ZrzutEkranu.Utils.PdfImageOrientation" Scope="User">
+      <Value Profile="(Default)">Vertical</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

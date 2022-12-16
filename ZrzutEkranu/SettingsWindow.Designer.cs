@@ -37,9 +37,19 @@
             this.BMP_RadioButton = new System.Windows.Forms.RadioButton();
             this.JPG_RadioButton = new System.Windows.Forms.RadioButton();
             this.PNG_RadioButton = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Margin_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Horizontal_RadioButton = new System.Windows.Forms.RadioButton();
+            this.Vertical_RadioButton = new System.Windows.Forms.RadioButton();
+            this.Auto_RadioButton = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Margin_NumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -48,13 +58,17 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.47221F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.52779F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(628, 236);
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(636, 443);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -66,7 +80,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(622, 87);
+            this.groupBox1.Size = new System.Drawing.Size(630, 104);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Akecptowane źródła zrzutu ekranu";
@@ -113,9 +127,9 @@
             this.groupBox2.Controls.Add(this.PNG_RadioButton);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(3, 96);
+            this.groupBox2.Location = new System.Drawing.Point(3, 113);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(622, 137);
+            this.groupBox2.Size = new System.Drawing.Size(630, 104);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Format zapisywanego obrazu";
@@ -155,20 +169,111 @@
             this.PNG_RadioButton.UseVisualStyleBackColor = true;
             this.PNG_RadioButton.CheckedChanged += new System.EventHandler(this.SetFormatSetting);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.Margin_NumericUpDown);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(3, 223);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(630, 104);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Margines obrazu w PDF";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.Auto_RadioButton);
+            this.groupBox4.Controls.Add(this.Vertical_RadioButton);
+            this.groupBox4.Controls.Add(this.Horizontal_RadioButton);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(3, 333);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(630, 107);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Orientacja obrazu w PDF";
+            // 
+            // Margin_NumericUpDown
+            // 
+            this.Margin_NumericUpDown.AutoSize = true;
+            this.Margin_NumericUpDown.Location = new System.Drawing.Point(19, 50);
+            this.Margin_NumericUpDown.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.Margin_NumericUpDown.Name = "Margin_NumericUpDown";
+            this.Margin_NumericUpDown.Size = new System.Drawing.Size(200, 35);
+            this.Margin_NumericUpDown.TabIndex = 0;
+            this.Margin_NumericUpDown.ValueChanged += new System.EventHandler(this.Margin_NumericUpDown_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(225, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "pikseli";
+            // 
+            // Horizontal_RadioButton
+            // 
+            this.Horizontal_RadioButton.AutoSize = true;
+            this.Horizontal_RadioButton.Checked = true;
+            this.Horizontal_RadioButton.Location = new System.Drawing.Point(19, 44);
+            this.Horizontal_RadioButton.Name = "Horizontal_RadioButton";
+            this.Horizontal_RadioButton.Size = new System.Drawing.Size(138, 33);
+            this.Horizontal_RadioButton.TabIndex = 3;
+            this.Horizontal_RadioButton.TabStop = true;
+            this.Horizontal_RadioButton.Text = "Pozioma";
+            this.Horizontal_RadioButton.UseVisualStyleBackColor = true;
+            this.Horizontal_RadioButton.CheckedChanged += new System.EventHandler(this.SetPdfOrientationSetting);
+            // 
+            // Vertical_RadioButton
+            // 
+            this.Vertical_RadioButton.AutoSize = true;
+            this.Vertical_RadioButton.Location = new System.Drawing.Point(254, 44);
+            this.Vertical_RadioButton.Name = "Vertical_RadioButton";
+            this.Vertical_RadioButton.Size = new System.Drawing.Size(138, 33);
+            this.Vertical_RadioButton.TabIndex = 3;
+            this.Vertical_RadioButton.Text = "Pionowa";
+            this.Vertical_RadioButton.UseVisualStyleBackColor = true;
+            this.Vertical_RadioButton.CheckedChanged += new System.EventHandler(this.SetPdfOrientationSetting);
+            // 
+            // Auto_RadioButton
+            // 
+            this.Auto_RadioButton.AutoSize = true;
+            this.Auto_RadioButton.Location = new System.Drawing.Point(433, 44);
+            this.Auto_RadioButton.Name = "Auto_RadioButton";
+            this.Auto_RadioButton.Size = new System.Drawing.Size(191, 33);
+            this.Auto_RadioButton.TabIndex = 4;
+            this.Auto_RadioButton.Text = "Automatyczna";
+            this.Auto_RadioButton.UseVisualStyleBackColor = true;
+            this.Auto_RadioButton.CheckedChanged += new System.EventHandler(this.SetPdfOrientationSetting);
+            // 
             // SettingsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 236);
+            this.ClientSize = new System.Drawing.Size(636, 443);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SettingsWindow";
-            this.Text = "Settings";
+            this.Text = "Ustawienia";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Margin_NumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,5 +289,12 @@
         private System.Windows.Forms.CheckBox Other_Checkbox;
         private System.Windows.Forms.CheckBox SnippingTool_Checkbox;
         private System.Windows.Forms.CheckBox ZrzutEkranu_Checkbox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown Margin_NumericUpDown;
+        private System.Windows.Forms.RadioButton Auto_RadioButton;
+        private System.Windows.Forms.RadioButton Vertical_RadioButton;
+        private System.Windows.Forms.RadioButton Horizontal_RadioButton;
     }
 }

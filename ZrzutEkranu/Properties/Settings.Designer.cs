@@ -70,5 +70,29 @@ namespace ZrzutEkranu.Properties {
                 this["ClipboardSource_Other"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int PdfMargin {
+            get {
+                return ((int)(this["PdfMargin"]));
+            }
+            set {
+                this["PdfMargin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Vertical")]
+        public global::ZrzutEkranu.Utils.PdfImageOrientation PdfImageOrientation {
+            get {
+                return ((global::ZrzutEkranu.Utils.PdfImageOrientation)(this["PdfImageOrientation"]));
+            }
+            set {
+                this["PdfImageOrientation"] = value;
+            }
+        }
     }
 }
