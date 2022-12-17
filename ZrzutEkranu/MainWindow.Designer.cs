@@ -35,9 +35,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ScreenCaptureBox = new System.Windows.Forms.GroupBox();
             this.ScreenCaptureImage = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.ScreenCaptureBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScreenCaptureImage)).BeginInit();
@@ -108,7 +105,6 @@
             this.tableLayoutPanel1.Controls.Add(this.SaveToPDF_Button, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.ScreenCaptureBox, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.OpenSettings_Button, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -117,13 +113,10 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 458F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 729);
             this.tableLayoutPanel1.TabIndex = 9;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // ScreenCaptureBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.ScreenCaptureBox, 5);
-            this.ScreenCaptureBox.Controls.Add(this.label3);
-            this.ScreenCaptureBox.Controls.Add(this.label2);
             this.ScreenCaptureBox.Controls.Add(this.ScreenCaptureImage);
             this.ScreenCaptureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScreenCaptureBox.Location = new System.Drawing.Point(3, 83);
@@ -143,49 +136,19 @@
             this.ScreenCaptureImage.TabIndex = 0;
             this.ScreenCaptureImage.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(603, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(180, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(649, -1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(974, 729);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(1000, 800);
             this.Name = "MainWindow";
             this.Text = "ZrzutEkranu";
             this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ScreenCaptureBox.ResumeLayout(false);
-            this.ScreenCaptureBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScreenCaptureImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -200,9 +163,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox ScreenCaptureBox;
         private System.Windows.Forms.PictureBox ScreenCaptureImage;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
     }
 }
 

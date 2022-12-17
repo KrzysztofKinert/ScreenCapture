@@ -86,9 +86,9 @@ namespace ZrzutEkranu.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Vertical")]
-        public global::ZrzutEkranu.Utils.PdfImageOrientation PdfImageOrientation {
+        public global::ZrzutEkranu.Utility.PdfImageOrientation PdfImageOrientation {
             get {
-                return ((global::ZrzutEkranu.Utils.PdfImageOrientation)(this["PdfImageOrientation"]));
+                return ((global::ZrzutEkranu.Utility.PdfImageOrientation)(this["PdfImageOrientation"]));
             }
             set {
                 this["PdfImageOrientation"] = value;

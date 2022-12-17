@@ -1,18 +1,13 @@
-﻿using PdfSharp.Drawing;
-using PdfSharp.Pdf;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using ZrzutEkranu.Properties;
 
-namespace ZrzutEkranu.Utils
+namespace ZrzutEkranu.Utility
 {
     [Serializable]
     public enum PdfImageOrientation
@@ -21,6 +16,7 @@ namespace ZrzutEkranu.Utils
         Horizontal,
         Auto
     }
+
     internal static class SaveFile
     {
         private const int PdfPageWidth = 595;
@@ -29,19 +25,19 @@ namespace ZrzutEkranu.Utils
 
         public static void SaveToImage(Image image)
         {
-            var format = Properties.Settings.Default.ImageFormat;
-            var fileName = GetFileName(Properties.Settings.Default.ImageFormat.ToString());
+            var format = Settings.Default.ImageFormat;
+            var fileName = GetFileName(Settings.Default.ImageFormat.ToString());
 
             if (fileName != null)
                 image.Save(fileName, format);
         }
 
-        public static void SaveToPdf(Image capturedImage)
+        public static void SaveToPdf(Image image)
         {
             var document = new PdfDocument();
             var page = document.AddPage();
 
-            AddImageToPdf(capturedImage, page);
+            AddImageToPdf(image, page);
 
             var fileName = GetFileName("PDF");
 
@@ -51,7 +47,7 @@ namespace ZrzutEkranu.Utils
 
         private static void AddImageToPdf(Image image, PdfPage page)
         {
-            var margin = Properties.Settings.Default.PdfMargin;
+            var margin = Settings.Default.PdfMargin;
 
             using (var gfx = XGraphics.FromPdfPage(page))
             using (var stream = new MemoryStream())
@@ -63,11 +59,11 @@ namespace ZrzutEkranu.Utils
                 stream.Position = 0;
                 using (var xImage = XImage.FromStream(stream))
                 {
-                    double xOffset;
+                    double widthOffset;
                     if (ImageFitsPdf(image))
                     {
-                        xOffset = (PdfPageWidth - xImage.PointWidth - 2 * margin) / 2;
-                        gfx.DrawImage(xImage, margin + xOffset, margin);
+                        widthOffset = (PdfPageWidth - xImage.PointWidth - 2 * margin) / 2;
+                        gfx.DrawImage(xImage, margin + widthOffset, margin);
                     }
                     else
                     {
@@ -76,16 +72,16 @@ namespace ZrzutEkranu.Utils
                         if (xImage.PointWidth > xImage.PointHeight)
                         {
                             scaledWidth = PdfPageWidth - 2 * margin;
-                            scaledHeight = scaledWidth / xImage.Size.Width * xImage.Size.Height;
+                            scaledHeight = scaledWidth / xImage.PointWidth * xImage.PointHeight;
                         }
                         else
                         {
                             scaledHeight = PdfPageHeight - 2 * margin;
-                            scaledWidth = scaledHeight / xImage.Size.Height * xImage.Size.Width;
+                            scaledWidth = scaledHeight / xImage.PointHeight * xImage.PointWidth;
                         }
 
-                        xOffset = (PdfPageWidth - scaledWidth - 2 * margin) / 2;
-                        gfx.DrawImage(xImage, margin + xOffset, margin, scaledWidth, scaledHeight);
+                        widthOffset = (PdfPageWidth - scaledWidth - 2 * margin) / 2;
+                        gfx.DrawImage(xImage, margin + widthOffset, margin, scaledWidth, scaledHeight);
                     }
                 }
             }
@@ -93,17 +89,17 @@ namespace ZrzutEkranu.Utils
 
         private static bool ShouldRotateImage(Image image)
         {
-            var autoRotation = ImageFitsPdf(image) is false 
-                                   && Properties.Settings.Default.PdfImageOrientation == PdfImageOrientation.Auto 
+            var autoRotation = ImageFitsPdf(image) is false
+                                   && Settings.Default.PdfImageOrientation == PdfImageOrientation.Auto
                                    && image.Width > image.Height;
 
-            return autoRotation || Properties.Settings.Default.PdfImageOrientation == PdfImageOrientation.Vertical;
+            return autoRotation || Settings.Default.PdfImageOrientation == PdfImageOrientation.Vertical;
         }
 
         private static bool ImageFitsPdf(Image image)
         {
-            var maxWidth = PdfPageWidth - 2 * Properties.Settings.Default.PdfMargin;
-            var maxHeight = PdfPageHeight - 2 * Properties.Settings.Default.PdfMargin;
+            var maxWidth = PdfPageWidth - 2 * Settings.Default.PdfMargin;
+            var maxHeight = PdfPageHeight - 2 * Settings.Default.PdfMargin;
             var dpiWidth = image.Width * PdfDpi / image.HorizontalResolution;
             var dpiHeight = image.Height * PdfDpi / image.VerticalResolution;
             return dpiWidth < maxWidth && dpiHeight < maxHeight;
