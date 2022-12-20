@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using ZrzutEkranu.Enums;
 using ZrzutEkranu.Properties;
-using ZrzutEkranu.Utility;
 
 namespace ZrzutEkranu
 {

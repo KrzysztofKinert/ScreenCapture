@@ -17,8 +17,8 @@
     <Setting Name="PdfMargin" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
-    <Setting Name="PdfImageOrientation" Type="ZrzutEkranu.Utils.PdfImageOrientation" Scope="User">
-      <Value Profile="(Default)">Vertical</Value>
+    <Setting Name="PdfImageOrientation" Type="ZrzutEkranu.Enums.PdfImageOrientation" Scope="User">
+      <Value Profile="(Default)">Horizontal</Value>
     </Setting>
   </Settings>
 </SettingsFile>

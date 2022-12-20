@@ -10,14 +10,13 @@ namespace ZrzutEkranu
     public partial class MainWindow : Form
     {
         private readonly SharpClipboard _clipboard = new SharpClipboard();
-        private Image _capturedImage;
+        private Image _screenshot;
 
         public MainWindow()
         {
             InitializeComponent();
             _clipboard.ClipboardChanged += ClipboardChanged;
         }
-
 
         private void ClipboardChanged(object sender, SharpClipboard.ClipboardChangedEventArgs e)
         {
@@ -42,26 +41,25 @@ namespace ZrzutEkranu
                     break;
             }
 
-            _capturedImage = _clipboard.ClipboardImage;
-            ScreenCaptureImage.Image = _capturedImage;
-            SetImageSizeMode();
+            _screenshot = _clipboard.ClipboardImage;
+            Screenshot_PictureBox.Image = _screenshot;
+            SetPictureBoxSizeMode();
         }
-
 
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
-            SetImageSizeMode();
+            SetPictureBoxSizeMode();
         }
 
-        private void SetImageSizeMode()
+        private void SetPictureBoxSizeMode()
         {
-            if (_capturedImage is null)
+            if (_screenshot is null)
                 return;
 
-            if (ScreenCaptureBox.Size.Width > _capturedImage.Width && ScreenCaptureBox.Size.Height > _capturedImage.Height)
-                ScreenCaptureImage.SizeMode = PictureBoxSizeMode.CenterImage;
+            if (Screenshot_GroupBox.Size.Width > _screenshot.Width && Screenshot_GroupBox.Size.Height > _screenshot.Height)
+                Screenshot_PictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             else
-                ScreenCaptureImage.SizeMode = PictureBoxSizeMode.Zoom;
+                Screenshot_PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void OpenSettings_Button_Click(object sender, EventArgs e)
@@ -78,38 +76,37 @@ namespace ZrzutEkranu
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message, "Błąd procesu zrzutu ekranu", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show(exception.Message, "Błąd procesu zrzutu ekranu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void SaveToPDF_Button_Click(object sender, EventArgs e)
         {
-            if (_capturedImage is null)
+            if (_screenshot is null)
                 return;
 
             try
             {
-                SaveFile.SaveToPdf((Image)_capturedImage.Clone());
+                SaveScreenshot.AsPdf((Image)_screenshot.Clone());
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message, "Błąd zapisu do PDF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exception.Message, "Błąd zapisu zrzutu do PDF", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void SaveToImageButton_Click(object sender, EventArgs e)
+        private void SaveToImage_Button_Click(object sender, EventArgs e)
         {
-            if (_capturedImage is null)
+            if (_screenshot is null)
                 return;
 
             try
             {
-                SaveFile.SaveToImage(_capturedImage);
+                SaveScreenshot.AsImage(_screenshot);
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message, "Błąd zapisu do obrazu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exception.Message, "Błąd zapisu zrzutu do obrazu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

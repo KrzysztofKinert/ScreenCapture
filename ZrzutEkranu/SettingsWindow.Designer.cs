@@ -68,11 +68,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(777, 455);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(674, 379);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.Other_Checkbox);
             this.groupBox1.Controls.Add(this.SnippingTool_Checkbox);
             this.groupBox1.Controls.Add(this.ZrzutEkranu_Checkbox);
@@ -80,7 +81,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(771, 107);
+            this.groupBox1.Size = new System.Drawing.Size(668, 88);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Akceptowane źródła zrzutu ekranu";
@@ -89,7 +90,7 @@
             // 
             this.Other_Checkbox.AutoSize = true;
             this.Other_Checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Other_Checkbox.Location = new System.Drawing.Point(652, 45);
+            this.Other_Checkbox.Location = new System.Drawing.Point(552, 40);
             this.Other_Checkbox.Name = "Other_Checkbox";
             this.Other_Checkbox.Size = new System.Drawing.Size(99, 35);
             this.Other_Checkbox.TabIndex = 2;
@@ -101,7 +102,7 @@
             // 
             this.SnippingTool_Checkbox.AutoSize = true;
             this.SnippingTool_Checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SnippingTool_Checkbox.Location = new System.Drawing.Point(264, 45);
+            this.SnippingTool_Checkbox.Location = new System.Drawing.Point(225, 40);
             this.SnippingTool_Checkbox.Name = "SnippingTool_Checkbox";
             this.SnippingTool_Checkbox.Size = new System.Drawing.Size(301, 35);
             this.SnippingTool_Checkbox.TabIndex = 1;
@@ -113,7 +114,7 @@
             // 
             this.ZrzutEkranu_Checkbox.AutoSize = true;
             this.ZrzutEkranu_Checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ZrzutEkranu_Checkbox.Location = new System.Drawing.Point(19, 45);
+            this.ZrzutEkranu_Checkbox.Location = new System.Drawing.Point(15, 40);
             this.ZrzutEkranu_Checkbox.Name = "ZrzutEkranu_Checkbox";
             this.ZrzutEkranu_Checkbox.Size = new System.Drawing.Size(195, 35);
             this.ZrzutEkranu_Checkbox.TabIndex = 0;
@@ -123,14 +124,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox2.Controls.Add(this.BMP_RadioButton);
             this.groupBox2.Controls.Add(this.JPG_RadioButton);
             this.groupBox2.Controls.Add(this.PNG_RadioButton);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(3, 116);
+            this.groupBox2.Location = new System.Drawing.Point(3, 97);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(771, 107);
+            this.groupBox2.Size = new System.Drawing.Size(668, 88);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Format zapisywanego obrazu";
@@ -139,7 +141,7 @@
             // 
             this.BMP_RadioButton.AutoSize = true;
             this.BMP_RadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMP_RadioButton.Location = new System.Drawing.Point(515, 44);
+            this.BMP_RadioButton.Location = new System.Drawing.Point(460, 40);
             this.BMP_RadioButton.Name = "BMP_RadioButton";
             this.BMP_RadioButton.Size = new System.Drawing.Size(103, 35);
             this.BMP_RadioButton.TabIndex = 2;
@@ -151,7 +153,7 @@
             // 
             this.JPG_RadioButton.AutoSize = true;
             this.JPG_RadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JPG_RadioButton.Location = new System.Drawing.Point(326, 44);
+            this.JPG_RadioButton.Location = new System.Drawing.Point(280, 40);
             this.JPG_RadioButton.Name = "JPG_RadioButton";
             this.JPG_RadioButton.Size = new System.Drawing.Size(98, 35);
             this.JPG_RadioButton.TabIndex = 1;
@@ -164,7 +166,7 @@
             this.PNG_RadioButton.AutoSize = true;
             this.PNG_RadioButton.Checked = true;
             this.PNG_RadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PNG_RadioButton.Location = new System.Drawing.Point(143, 44);
+            this.PNG_RadioButton.Location = new System.Drawing.Point(100, 40);
             this.PNG_RadioButton.Name = "PNG_RadioButton";
             this.PNG_RadioButton.Size = new System.Drawing.Size(104, 35);
             this.PNG_RadioButton.TabIndex = 0;
@@ -175,13 +177,14 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.Margin_NumericUpDown);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(3, 229);
+            this.groupBox3.Location = new System.Drawing.Point(3, 191);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(771, 107);
+            this.groupBox3.Size = new System.Drawing.Size(668, 88);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Margines obrazu w PDF";
@@ -190,7 +193,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(426, 47);
+            this.label1.Location = new System.Drawing.Point(403, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 31);
             this.label1.TabIndex = 1;
@@ -200,7 +203,7 @@
             // 
             this.Margin_NumericUpDown.AutoSize = true;
             this.Margin_NumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin_NumericUpDown.Location = new System.Drawing.Point(220, 40);
+            this.Margin_NumericUpDown.Location = new System.Drawing.Point(197, 37);
             this.Margin_NumericUpDown.Maximum = new decimal(new int[] {
             290,
             0,
@@ -213,14 +216,15 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox4.Controls.Add(this.Auto_RadioButton);
             this.groupBox4.Controls.Add(this.Vertical_RadioButton);
             this.groupBox4.Controls.Add(this.Horizontal_RadioButton);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(3, 342);
+            this.groupBox4.Location = new System.Drawing.Point(3, 285);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(771, 110);
+            this.groupBox4.Size = new System.Drawing.Size(668, 91);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Orientacja obrazu w PDF";
@@ -229,7 +233,7 @@
             // 
             this.Auto_RadioButton.AutoSize = true;
             this.Auto_RadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Auto_RadioButton.Location = new System.Drawing.Point(433, 44);
+            this.Auto_RadioButton.Location = new System.Drawing.Point(433, 40);
             this.Auto_RadioButton.Name = "Auto_RadioButton";
             this.Auto_RadioButton.Size = new System.Drawing.Size(218, 35);
             this.Auto_RadioButton.TabIndex = 4;
@@ -241,7 +245,7 @@
             // 
             this.Vertical_RadioButton.AutoSize = true;
             this.Vertical_RadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vertical_RadioButton.Location = new System.Drawing.Point(254, 44);
+            this.Vertical_RadioButton.Location = new System.Drawing.Point(248, 40);
             this.Vertical_RadioButton.Name = "Vertical_RadioButton";
             this.Vertical_RadioButton.Size = new System.Drawing.Size(149, 35);
             this.Vertical_RadioButton.TabIndex = 3;
@@ -254,7 +258,7 @@
             this.Horizontal_RadioButton.AutoSize = true;
             this.Horizontal_RadioButton.Checked = true;
             this.Horizontal_RadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Horizontal_RadioButton.Location = new System.Drawing.Point(19, 44);
+            this.Horizontal_RadioButton.Location = new System.Drawing.Point(60, 40);
             this.Horizontal_RadioButton.Name = "Horizontal_RadioButton";
             this.Horizontal_RadioButton.Size = new System.Drawing.Size(150, 35);
             this.Horizontal_RadioButton.TabIndex = 3;
@@ -267,11 +271,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 455);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(674, 379);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(700, 450);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(700, 450);
             this.Name = "SettingsWindow";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
