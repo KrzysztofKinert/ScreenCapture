@@ -9,7 +9,7 @@
       <Value Profile="(Default)">Png</Value>
     </Setting>
     <Setting Name="ClipboardSource_SnippingTool" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ClipboardSource_Other" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
