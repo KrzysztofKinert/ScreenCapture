@@ -67,7 +67,6 @@
             this.Screenshot_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Screenshot_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Screenshot_Button.Image = global::ZrzutEkranu.Properties.Resources.screenshot;
-            this.Screenshot_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Screenshot_Button.Location = new System.Drawing.Point(6, 6);
             this.Screenshot_Button.Margin = new System.Windows.Forms.Padding(6);
             this.Screenshot_Button.Name = "Screenshot_Button";
@@ -83,7 +82,6 @@
             this.SaveToImage_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SaveToImage_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveToImage_Button.Image = global::ZrzutEkranu.Properties.Resources.image;
-            this.SaveToImage_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SaveToImage_Button.Location = new System.Drawing.Point(406, 6);
             this.SaveToImage_Button.Margin = new System.Windows.Forms.Padding(6);
             this.SaveToImage_Button.Name = "SaveToImage_Button";
@@ -99,7 +97,6 @@
             this.SaveToPDF_Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SaveToPDF_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveToPDF_Button.Image = global::ZrzutEkranu.Properties.Resources.pdf;
-            this.SaveToPDF_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SaveToPDF_Button.Location = new System.Drawing.Point(206, 6);
             this.SaveToPDF_Button.Margin = new System.Windows.Forms.Padding(6);
             this.SaveToPDF_Button.Name = "SaveToPDF_Button";
@@ -137,7 +134,6 @@
             this.OpenSettings_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenSettings_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpenSettings_Button.Image = global::ZrzutEkranu.Properties.Resources.settings;
-            this.OpenSettings_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OpenSettings_Button.Location = new System.Drawing.Point(780, 6);
             this.OpenSettings_Button.Margin = new System.Windows.Forms.Padding(6);
             this.OpenSettings_Button.Name = "OpenSettings_Button";
@@ -150,7 +146,8 @@
             // 
             // MainWindow
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(974, 729);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

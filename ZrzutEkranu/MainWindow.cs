@@ -91,7 +91,7 @@ namespace ZrzutEkranu
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message, "Błąd zapisu zrzutu do PDF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exception.Message, "Błąd zapisu zrzutu ekranu do PDF", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -106,7 +106,7 @@ namespace ZrzutEkranu
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message, "Błąd zapisu zrzutu do obrazu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exception.Message, "Błąd zapisu zrzutu ekranu do obrazu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
