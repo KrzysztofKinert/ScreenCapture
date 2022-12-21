@@ -56,7 +56,7 @@ namespace ZrzutEkranu
             if (_screenshot is null)
                 return;
 
-            if (Screenshot_GroupBox.Size.Width > _screenshot.Width && Screenshot_GroupBox.Size.Height > _screenshot.Height)
+            if (Screenshot_PictureBox.Size.Width > _screenshot.Width && Screenshot_PictureBox.Size.Height > _screenshot.Height)
                 Screenshot_PictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             else
                 Screenshot_PictureBox.SizeMode = PictureBoxSizeMode.Zoom;

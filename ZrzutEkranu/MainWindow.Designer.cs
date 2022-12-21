@@ -47,7 +47,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.Controls.Add(this.Screenshot_Button, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.SaveToImage_Button, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.SaveToPDF_Button, 1, 0);
@@ -58,8 +58,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 458F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 729);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(774, 529);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // Screenshot_Button
@@ -109,12 +109,13 @@
             // 
             // Screenshot_GroupBox
             // 
+            this.Screenshot_GroupBox.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.Screenshot_GroupBox, 5);
             this.Screenshot_GroupBox.Controls.Add(this.Screenshot_PictureBox);
             this.Screenshot_GroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Screenshot_GroupBox.Location = new System.Drawing.Point(3, 83);
             this.Screenshot_GroupBox.Name = "Screenshot_GroupBox";
-            this.Screenshot_GroupBox.Size = new System.Drawing.Size(968, 643);
+            this.Screenshot_GroupBox.Size = new System.Drawing.Size(768, 443);
             this.Screenshot_GroupBox.TabIndex = 8;
             this.Screenshot_GroupBox.TabStop = false;
             this.Screenshot_GroupBox.Text = "Zrzut ekranu";
@@ -124,7 +125,7 @@
             this.Screenshot_PictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Screenshot_PictureBox.Location = new System.Drawing.Point(3, 31);
             this.Screenshot_PictureBox.Name = "Screenshot_PictureBox";
-            this.Screenshot_PictureBox.Size = new System.Drawing.Size(962, 609);
+            this.Screenshot_PictureBox.Size = new System.Drawing.Size(762, 409);
             this.Screenshot_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Screenshot_PictureBox.TabIndex = 0;
             this.Screenshot_PictureBox.TabStop = false;
@@ -134,28 +135,27 @@
             this.OpenSettings_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenSettings_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpenSettings_Button.Image = global::ZrzutEkranu.Properties.Resources.settings;
-            this.OpenSettings_Button.Location = new System.Drawing.Point(780, 6);
+            this.OpenSettings_Button.Location = new System.Drawing.Point(700, 6);
             this.OpenSettings_Button.Margin = new System.Windows.Forms.Padding(6);
             this.OpenSettings_Button.Name = "OpenSettings_Button";
-            this.OpenSettings_Button.Size = new System.Drawing.Size(188, 68);
+            this.OpenSettings_Button.Size = new System.Drawing.Size(68, 68);
             this.OpenSettings_Button.TabIndex = 1;
-            this.OpenSettings_Button.Text = "Ustawienia";
-            this.OpenSettings_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.OpenSettings_Button.UseVisualStyleBackColor = true;
             this.OpenSettings_Button.Click += new System.EventHandler(this.OpenSettings_Button_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(974, 729);
+            this.ClientSize = new System.Drawing.Size(774, 529);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(1000, 800);
+            this.MinimumSize = new System.Drawing.Size(750, 300);
             this.Name = "MainWindow";
             this.Text = "ZrzutEkranu";
             this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.Screenshot_GroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Screenshot_PictureBox)).EndInit();
             this.ResumeLayout(false);
